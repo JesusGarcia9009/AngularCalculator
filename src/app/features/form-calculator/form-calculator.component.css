@@ -1,0 +1,20 @@
+.cards-margins{
+  margin-top: 2%;
+}
+
+.required-label {
+  color: green;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.required-div{
+  margin-left: 1%;
+}
+
+.button-style{
+    color: white;
+    background-color: green;
+    border-color:white;
+}
+

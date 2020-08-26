@@ -1,0 +1,189 @@
+<div class="card cards-margins">
+  <div class="card-header">
+    Mortgage Calculator
+  </div>
+  <div class="card-body">
+    <form class="user" [formGroup]="calculatorForm" (ngSubmit)="onFormSubmit()">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="locationInput">Location:</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="location" maxlength="14" class="form-control form-control-user"
+                id="locationInput" aria-describedby="locationInput" placeholder="Enter Location...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.location && (calculatorFormControls.location.dirty || calculatorFormControls.location.touched) && calculatorFormControls.location.errors?.required">
+                <span class="required-label">
+                  * Location is required.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="priceInput">Price:</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="price" maxlength="14" class="form-control form-control-user"
+                id="priceInput" aria-describedby="priceInput" placeholder="Enter Price...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.price && (calculatorFormControls.price.dirty || calculatorFormControls.price.touched) && calculatorFormControls.price.errors?.required">
+                <span class="required-label">
+                  * Price is required.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="interesInput">Interest:</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="interest" maxlength="14" class="form-control form-control-user"
+                id="interestInput" aria-describedby="interestInput" placeholder="Enter Interest...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.interest && (calculatorFormControls.interest.dirty || calculatorFormControls.interest.touched) && calculatorFormControls.interest.errors?.required">
+                <span class="required-label">
+                  * Interest is required.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="interesInput">MI (%):</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="mi" maxlength="14" class="form-control form-control-user" id="miInput"
+                aria-describedby="miInput" placeholder="Enter MI...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.mi && (calculatorFormControls.mi.dirty || calculatorFormControls.mi.touched) && calculatorFormControls.mi.errors?.required">
+                <span class="required-label">
+                  * MI is required.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="interesInput">Insurance (montlhy):</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="insurance" maxlength="14" class="form-control form-control-user"
+                id="insuranceInput" aria-describedby="insuranceInput" placeholder="Enter Insurance...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.insurance && (calculatorFormControls.insurance.dirty || calculatorFormControls.insurance.touched) && calculatorFormControls.insurance.errors?.required">
+                <span class="required-label">
+                  * Insurance is required.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="taxesInput">Taxes:</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="taxes" maxlength="14" class="form-control form-control-user"
+                id="taxesInput" aria-describedby="taxesInput" placeholder="Enter Taxes...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.taxes && (calculatorFormControls.taxes.dirty || calculatorFormControls.taxes.touched) && calculatorFormControls.taxes.errors?.required">
+                <span class="required-label">
+                  * Taxes is required.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="loanTermInput">Loan Term: (months)*:</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="loanTerm" maxlength="14" class="form-control form-control-user"
+                id="loanTermInput" aria-describedby="loanTermInput" placeholder="Enter loan term...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.loanTerm && (calculatorFormControls.loanTerm.dirty || calculatorFormControls.loanTerm.touched) && calculatorFormControls.loanTerm.errors?.required">
+                <span class="required-label">
+                  * Loan Term is required.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="loanltv">LTV (%) *:</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="ltv" maxlength="14" class="form-control form-control-user"
+                id="ltvInput" aria-describedby="ltvInput" placeholder="Enter LTV...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.ltv && (calculatorFormControls.ltv.dirty || calculatorFormControls.ltv.touched) && calculatorFormControls.ltv.errors?.required">
+                <span class="required-label">
+                  * LTV is required.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="loanTermInput">Loan Type: (months)*:</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="loanType" maxlength="14" class="form-control form-control-user"
+                id="loanTypeInput" aria-describedby="loanTypeInput" placeholder="Enter loan type...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.loanType && (calculatorFormControls.loanType.dirty || calculatorFormControls.loanType.touched) && calculatorFormControls.loanType.errors?.required">
+                <span class="required-label">
+                  * Loan type is required.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="loanTermInput">Loan Amount: (months)*:</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="loanAmount" maxlength="14" class="form-control form-control-user"
+                id="loanAmountInput" aria-describedby="loanAmountInput" placeholder="Enter loan amount...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.loanAmount && (calculatorFormControls.loanAmount.dirty || calculatorFormControls.loanAmount.touched) && calculatorFormControls.loanAmount.errors?.required">
+                <span class="required-label">
+                  * Loan amount is required.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="loanTermInput">Max Pay: *</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="maxPay" maxlength="14" class="form-control form-control-user"
+                id="maxpayInput" aria-describedby="maxpayInput" placeholder="Enter max pay...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.maxPay && (calculatorFormControls.maxPay.dirty || calculatorFormControls.maxPay.touched) && calculatorFormControls.maxPay.errors?.required">
+                <span class="required-label">
+                  * Max Pay is required.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-4  col-form-label font-weight-bold" for="loanTermInput">HOA: *</label>
+            <div class="col-lg-8">
+              <input type="text" formControlName="hoa" maxlength="14" class="form-control form-control-user"
+                id="hoaInput" aria-describedby="hoaInput" placeholder="Enter HOA...">
+              <div class="row mt-2 required-div"
+                *ngIf="calculatorFormControls.hoa && (calculatorFormControls.hoa.dirty || calculatorFormControls.hoa.touched) && calculatorFormControls.hoa.errors?.required">
+                <span class="required-label">
+                  * HOA is required.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+              <button id="buttonCalcular" type="submit" [disabled]="!calculatorForm.valid"
+                class="btn btn-primary btn-user btn-block button-style">
+                Buscar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
